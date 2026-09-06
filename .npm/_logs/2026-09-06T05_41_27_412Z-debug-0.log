@@ -1,0 +1,11 @@
+0 verbose cli /opt/homebrew/Cellar/node@20/20.19.6/bin/node /opt/homebrew/Cellar/node@20/20.19.6/lib/node_modules/npm/bin/npm-cli.js
+1 info using npm@10.8.2
+2 info using node@v20.19.6
+3 silly config load:file:/opt/homebrew/Cellar/node@20/20.19.6/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/thantzintun/TZT/T-Portfolio/.npmrc
+5 silly config load:file:/opt/homebrew/etc/npmrc
+6 verbose title npm exec ng build --verbose
+7 verbose argv "exec" "--" "ng" "build" "--verbose"
+8 verbose logfile logs-max:10 dir:/Users/thantzintun/TZT/T-Portfolio/.npm/_logs/2026-09-06T05_41_27_412Z-
+9 verbose logfile /Users/thantzintun/TZT/T-Portfolio/.npm/_logs/2026-09-06T05_41_27_412Z-debug-0.log
+10 silly logfile done cleaning log files

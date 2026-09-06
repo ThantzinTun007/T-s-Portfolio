@@ -1,0 +1,170 @@
+/* Hero Specific Styles */
+:host {
+  display: block;
+  width: 100%;
+}
+
+/* Custom diamond shadow styling */
+.diamond-shadow {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+:host-context(.dark) .diamond-shadow {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Social Media Icons (example-2) */
+ul.example-2 {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  gap: 12px;
+}
+
+.example-2 .icon-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tooltip */
+.example-2 .icon-content .tooltip {
+  position: absolute;
+  top: -34px;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 6px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 30;
+}
+
+/* Tooltip Arrow */
+.example-2 .icon-content .tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 4px;
+  border-style: solid;
+  border-color: inherit;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+
+.example-2 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Icon Link */
+.example-2 .icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #525252; /* neutral-600 */
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Mode Icon Link */
+:host-context(.dark) .example-2 .icon-content a {
+  color: #d4d4d4; /* neutral-300 */
+  background-color: #171717; /* neutral-900 */
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.5);
+}
+
+.example-2 .icon-content a:hover {
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.18);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.example-2 .icon-content a svg {
+  position: relative;
+  z-index: 2;
+  width: 19px;
+  height: 19px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.example-2 .icon-content a:hover svg {
+  transform: scale(1.15);
+}
+
+/* Filled Animation */
+.example-2 .icon-content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  z-index: 1;
+  transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.example-2 .icon-content a:hover .filled {
+  height: 100%;
+}
+
+/* Platform Colors */
+
+/* LinkedIn */
+.example-2 .icon-content a[data-social='linkedin'] .filled,
+.example-2 .icon-content a[data-social='linkedin'] ~ .tooltip {
+  background-color: #0077b5;
+  border-color: #0077b5;
+}
+
+/* GitHub */
+.example-2 .icon-content a[data-social='github'] .filled,
+.example-2 .icon-content a[data-social='github'] ~ .tooltip {
+  background-color: #24292e;
+  border-color: #24292e;
+}
+
+:host-context(.dark) .example-2 .icon-content a[data-social='github'] .filled,
+:host-context(.dark) .example-2 .icon-content a[data-social='github'] ~ .tooltip {
+  background-color: #3f4756;
+  border-color: #3f4756;
+}
+
+/* Instagram */
+.example-2 .icon-content a[data-social='instagram'] .filled,
+.example-2 .icon-content a[data-social='instagram'] ~ .tooltip {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-color: #dc2743;
+}
+
+/* Facebook */
+.example-2 .icon-content a[data-social='facebook'] .filled,
+.example-2 .icon-content a[data-social='facebook'] ~ .tooltip {
+  background-color: #1877f2;
+  border-color: #1877f2;
+}

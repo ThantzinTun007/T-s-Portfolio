@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Thant Zin Tun | Full Stack Developer</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Prevent Theme Flash (FOUC) on Refresh -->
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem('app-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.style.colorScheme = 'dark';
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.style.colorScheme = 'light';
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style>
+    html.dark, html.dark body {
+      background-color: #0c0e12 !important;
+      color: #f3f4f6 !important;
+    }
+    html:not(.dark), html:not(.dark) body {
+      background-color: #fafafa !important;
+      color: #1a1a1a !important;
+    }
+  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#fafafa] dark:bg-[#0c0e12] text-[#1a1a1a] dark:text-[#f3f4f6] font-sans antialiased selection:bg-neutral-900 selection:text-white dark:selection:bg-white dark:selection:text-black">
+  <app-root></app-root>
+</body>
+</html>
