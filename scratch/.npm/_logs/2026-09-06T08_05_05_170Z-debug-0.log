@@ -1,0 +1,13 @@
+0 verbose cli /opt/homebrew/Cellar/node@20/20.19.6/bin/node /opt/homebrew/Cellar/node@20/20.19.6/lib/node_modules/npm/bin/npm-cli.js
+1 info using npm@10.8.2
+2 info using node@v20.19.6
+3 silly config load:file:/opt/homebrew/Cellar/node@20/20.19.6/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/thantzintun/TZT/T-Portfolio/.npmrc
+5 silly config load:file:/Users/thantzintun/TZT/T-Portfolio/scratch/.npmrc
+6 silly config load:file:/opt/homebrew/etc/npmrc
+7 verbose title npm exec ng build
+8 verbose argv "exec" "--" "ng" "build"
+9 verbose logfile logs-max:10 dir:/Users/thantzintun/TZT/T-Portfolio/scratch/.npm/_logs/2026-09-06T08_05_05_170Z-
+10 verbose logfile /Users/thantzintun/TZT/T-Portfolio/scratch/.npm/_logs/2026-09-06T08_05_05_170Z-debug-0.log
+11 silly logfile done cleaning log files
+12 http fetch GET https://registry.npmjs.org/npm attempt 1 failed with ENOTFOUND
