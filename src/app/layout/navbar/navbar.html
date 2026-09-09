@@ -29,7 +29,7 @@
       @for (item of navItems; track item.name) {
       <a
         [href]="item.href"
-        (click)="setActive(item.name)"
+        (click)="setActive(item.name, $event)"
         [attr.aria-label]="item.name"
         class="group relative flex items-center justify-center h-10 w-10 rounded-full transition-all duration-200"
         [ngClass]="
@@ -196,7 +196,7 @@
     @for (item of navItems; track item.name) {
     <a
       [href]="item.href"
-      (click)="setActive(item.name)"
+      (click)="setActive(item.name, $event)"
       class="flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all duration-150"
       [ngClass]="
         activeItem() === item.name

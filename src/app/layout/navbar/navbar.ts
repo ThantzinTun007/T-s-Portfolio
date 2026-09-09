@@ -29,9 +29,19 @@ export class Navbar {
 
   activeItem = signal<string>('Home');
 
-  setActive(item: string): void {
+  setActive(item: string, event?: Event): void {
+    if (event) event.preventDefault();
     this.activeItem.set(item);
     this.isMobileMenuOpen.set(false);
+
+    const navItem = this.navItems.find((n) => n.name === item);
+    if (!navItem) return;
+
+    const targetId = navItem.href.replace('#', '');
+    const el = document.getElementById(targetId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   toggleMobileMenu(): void {

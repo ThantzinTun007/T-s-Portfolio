@@ -8,6 +8,11 @@
     --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* offset for sticky navbar (h-20) */
+  }
+
   body {
     font-family: var(--font-sans);
     overflow-x: hidden;
