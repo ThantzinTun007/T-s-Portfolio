@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 interface SocialLink {
   name: string;
@@ -10,11 +11,15 @@ interface SocialLink {
 
 @Component({
   selector: 'app-home-page',
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
 })
 export class HomePage {
+  readonly currentYear = new Date().getFullYear();
+  readonly message = signal<string>('');
+  readonly isSent = signal<boolean>(false);
+
   readonly socials: SocialLink[] = [
     {
       name: 'Facebook',
@@ -34,5 +39,32 @@ export class HomePage {
       icon: 'discord',
       ariaLabel: 'Discord Profile',
     },
+    {
+      name: 'GitHub',
+      url: 'https://github.com',
+      icon: 'github',
+      ariaLabel: 'GitHub Profile',
+    },
   ];
+
+  sendMessage(): void {
+    const text = this.message().trim();
+    if (!text) return;
+    window.location.href = `mailto:tzt.thantzintun2022@gmail.com?subject=Portfolio Inquiry&body=${encodeURIComponent(
+      text
+    )}`;
+    this.isSent.set(true);
+    setTimeout(() => {
+      this.message.set('');
+      this.isSent.set(false);
+    }, 4000);
+  }
+
+  scrollToSection(id: string, event?: Event): void {
+    if (event) event.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }
